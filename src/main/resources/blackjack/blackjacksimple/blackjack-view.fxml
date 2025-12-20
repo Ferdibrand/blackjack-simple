@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.blackjacksimple.BlackjackController"
+            prefWidth="900" prefHeight="500" style="-fx-background-color: green;">
+
+    <!-- Left side: table with dealer/player cards and actions -->
+    <left>
+        <VBox spacing="20" alignment="CENTER" prefWidth="650">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Dealer -->
+            <Label text="Dealer's Cards"/>
+            <HBox fx:id="dealerCards" spacing="10" alignment="CENTER" prefHeight="180"/>
+
+            <!-- Player -->
+            <Label text="Your Cards"/>
+            <HBox fx:id="playerCards" spacing="10" alignment="CENTER" prefHeight="180"/>
+
+            <!-- Actions -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="hitButton" text="Hit" minWidth="100" minHeight="70" disable="true"/>
+                <Button fx:id="standButton" text="Stand" minWidth="100" minHeight="70" disable="true"/>
+            </HBox>
+        </VBox>
+    </left>
+
+    <!-- Right side: betting controls -->
+    <right>
+        <VBox spacing="20" alignment="CENTER" prefWidth="250">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Button fx:id="betButton" text="Bet" prefWidth="80" prefHeight="80"/>
+            <Label fx:id="betLabel" text="Bet: 0"/>
+
+            <GridPane alignment="CENTER" hgap="16" vgap="16">
+                <Button fx:id="betN1Button" text="-1" prefWidth="80" prefHeight="80" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Button fx:id="bet1Button" text="+1" prefWidth="80" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Button fx:id="betN10Button" text="-10" prefWidth="80" prefHeight="80" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Button fx:id="bet10Button" text="+10" prefWidth="80" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Button fx:id="betN100Button" text="-100" prefWidth="80" prefHeight="80" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Button fx:id="bet100Button" text="+100" prefWidth="80" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+
+            <Label fx:id="accountLabel" text="Account: 0"/>
+        </VBox>
+    </right>
+</BorderPane>
