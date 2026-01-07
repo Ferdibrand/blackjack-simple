@@ -1,55 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.blackjacksimple.BlackjackController"
-            prefWidth="900" prefHeight="500" style="-fx-background-color: green;">
+<BorderPane prefHeight="500" prefWidth="900" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.blackjacksimple.BlackjackController">
 
     <!-- Left side: table with dealer/player cards and actions -->
     <left>
-        <VBox spacing="20" alignment="CENTER" prefWidth="650">
+        <VBox alignment="CENTER" prefWidth="650" spacing="20">
             <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
+                <Insets bottom="20" left="20" right="20" top="20" />
             </padding>
 
             <!-- Dealer -->
-            <Label text="Dealer's Cards"/>
-            <HBox fx:id="dealerCards" spacing="10" alignment="CENTER" prefHeight="180"/>
+            <Label text="Dealer's Cards">
+            <font>
+               <Font name="Georgia Bold Italic" size="13.0" />
+            </font></Label>
+            <HBox fx:id="dealerCards" alignment="CENTER" prefHeight="180" spacing="10" />
 
             <!-- Player -->
-            <Label text="Your Cards"/>
-            <HBox fx:id="playerCards" spacing="10" alignment="CENTER" prefHeight="180"/>
+            <Label text="Your Cards">
+            <font>
+               <Font name="Georgia Bold Italic" size="13.0" />
+            </font></Label>
+            <HBox fx:id="playerCards" alignment="CENTER" prefHeight="180" spacing="10" />
 
             <!-- Actions -->
-            <HBox spacing="20" alignment="CENTER">
-                <Button fx:id="hitButton" text="Hit" minWidth="100" minHeight="70" disable="true"/>
-                <Button fx:id="standButton" text="Stand" minWidth="100" minHeight="70" disable="true"/>
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="hitButton" disable="true" minHeight="70" minWidth="100" text="Hit" />
+                <Button fx:id="standButton" disable="true" minHeight="70" minWidth="100" text="Stand" />
             </HBox>
         </VBox>
     </left>
 
     <!-- Right side: betting controls -->
     <right>
-        <VBox spacing="20" alignment="CENTER" prefWidth="250">
+        <VBox alignment="CENTER" prefWidth="250" spacing="20">
             <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
+                <Insets bottom="20" left="20" right="20" top="20" />
             </padding>
 
-            <Button fx:id="betButton" text="Bet" prefWidth="80" prefHeight="80"/>
-            <Label fx:id="betLabel" text="Bet: 0"/>
+            <Button fx:id="betButton" prefHeight="80" prefWidth="80" text="Bet" />
+            <Label fx:id="betLabel" text="Bet: 0" />
 
             <GridPane alignment="CENTER" hgap="16" vgap="16">
-                <Button fx:id="betN1Button" text="-1" prefWidth="80" prefHeight="80" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                <Button fx:id="bet1Button" text="+1" prefWidth="80" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                <Button fx:id="betN10Button" text="-10" prefWidth="80" prefHeight="80" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <Button fx:id="bet10Button" text="+10" prefWidth="80" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <Button fx:id="betN100Button" text="-100" prefWidth="80" prefHeight="80" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                <Button fx:id="bet100Button" text="+100" prefWidth="80" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Button fx:id="betN1Button" prefHeight="80" prefWidth="80" text="-1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Button fx:id="bet1Button" prefHeight="80" prefWidth="80" text="+1" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Button fx:id="betN10Button" prefHeight="80" prefWidth="80" text="-10" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Button fx:id="bet10Button" prefHeight="80" prefWidth="80" text="+10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button fx:id="betN100Button" prefHeight="80" prefWidth="80" text="-100" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Button fx:id="bet100Button" prefHeight="80" prefWidth="80" text="+100" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
             </GridPane>
 
-            <Label fx:id="accountLabel" text="Account: 0"/>
+            <Label fx:id="accountLabel" text="Account: 0" />
         </VBox>
     </right>
+   <top>
+      <Label fx:id="statusLabel" text="Time to bet" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Georgia Bold" size="20.0" />
+         </font>
+      </Label>
+   </top>
 </BorderPane>

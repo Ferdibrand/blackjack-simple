@@ -14,7 +14,7 @@ public class Deck {
     private String deckID = "450ean90wc5d";
     private int numCardsTotal;
     private int numCardsRemaining;
-    private int numDecks;
+    private int numDecks = 6;
     private static final ObjectMapper mapper = new ObjectMapper();
 
     public Deck() {
