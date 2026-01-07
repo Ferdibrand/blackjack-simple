@@ -41,7 +41,7 @@ public class BlackjackController {
     private boolean dealerBust;
 
     private static final int STARTING_ACCOUNT = 100;
-    private static final String DECK_ID = "i64fx0203vrm";
+    private static final String DECK_ID = "zckmhudnuard";
     private static final double BLACKJACK_PAYOUT = 3.0/2;
 
     @FXML
